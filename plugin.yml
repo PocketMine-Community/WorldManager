@@ -1,0 +1,11 @@
+name: WorldManager
+main: PMCommunity\WorldManager
+version: 1.0.0
+api: 5.0.0
+author: PocketMine Community
+
+permissions:
+  worldmanager.command:
+    default: op
+  worldmanager.subcommand.help:
+    default: true
