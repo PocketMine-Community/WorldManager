@@ -88,7 +88,7 @@ class WorldManager extends PluginBase {
         return $this->getDescription()->getVersion();
     }
 
-    public function getHelpMessage(): string {
+    public function getHelpMessage(int $page): string {
         $help = [
             "help" => "Show this help message",
             "region" => "Advanced region and world protection system",
@@ -102,9 +102,18 @@ class WorldManager extends PluginBase {
             "rename" => "Rename a world",
         ];
 
-        $helpMessage = "§aWorldManager §2" . $this->getVersion() . "\n";
+        $perPage = 5;
+        $totalPages = (int) ceil(count($help) / $perPage);
+        $page = max(1, min($page, $totalPages));
 
+        $helpMessage = "§6=== Showing §eWorldManager §6help page $page of $totalPages ===\n";
+
+        $currentIndex = 0;
         foreach ($help as $key => $value) {
+            $currentIndex++;
+            if ($currentIndex <= ($page - 1) * $perPage) continue;
+            if ($currentIndex > $page * $perPage) break;
+
             $helpMessage .= "§6/worldmanager $key §e» §6$value\n";
         }
 
