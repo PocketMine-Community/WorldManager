@@ -1,6 +1,6 @@
 name: WorldManager
 main: PMCommunity\WorldManager
-version: 1.0.0
+version: 2.0.0
 api: 5.0.0
 author: PocketMine Community
 
@@ -9,3 +9,18 @@ permissions:
     default: op
   worldmanager.subcommand.help:
     default: true
+  worldmanager.subcommand.pos1:
+    default: op
+  worldmanager.subcommand.pos2:
+    default: op
+  worldmanager.subcommand.define:
+    default: op
+  worldmanager.subcommand.flag:
+    default: op
+  worldmanager.subcommand.remove:
+    default: op
+  worldmanager.subcommand.list:
+    default: op
+  worldmanager.region.bypass:
+    default: op
+    description: Bypass all region restrictions
