@@ -23,18 +23,15 @@ class WorldManager extends PluginBase {
 
     public function onEnable(): void {
         self::$instance = $this;
-        if (!is_dir($this->getDataFolder())) {
-            mkdir($this->getDataFolder());
-        }
         $this->regionManager = new RegionManager($this);
         $this->getServer()->getPluginManager()->registerEvents(new RegionListener($this), $this);
+
         Registry::initCommands();
         
-        $this->getLogger()->info("WorldManager with Region Protection enabled!");
+        $this->getLogger()->debug("WorldManager enabled!");
     }
 
     public function onDisable(): void {
-        // Save regions on plugin disable
         if ($this->regionManager !== null) {
             $this->regionManager->saveRegions();
         }
@@ -101,11 +98,10 @@ class WorldManager extends PluginBase {
             "list" => "List all regions"
         ];
 
-        $helpMessage = "§aWorldManager §2" . $this->getVersion() . " §7- Region Protection\n";
-        $helpMessage .= "§7Available flags: §6build, pvp, entry, mob-spawning\n\n";
+        $helpMessage = "§aWorldManager §2" . $this->getVersion() . "\n";
 
         foreach ($help as $key => $value) {
-            $helpMessage .= "§6/rg $key §e» §6$value\n";
+            $helpMessage .= "§6/worldmanager $key §e» §6$value\n";
         }
 
         return $helpMessage;

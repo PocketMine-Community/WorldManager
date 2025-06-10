@@ -1,6 +1,6 @@
 name: WorldManager
 main: PMCommunity\WorldManager
-version: 2.0.0
+version: 1.0.0
 api: 5.0.0
 author: PocketMine Community
 
@@ -9,6 +9,8 @@ permissions:
     default: op
   worldmanager.subcommand.help:
     default: true
+  worldmanager.subcommand.region:
+    default: op
   worldmanager.subcommand.pos1:
     default: op
   worldmanager.subcommand.pos2:
