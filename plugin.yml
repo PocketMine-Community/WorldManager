@@ -8,21 +8,32 @@ permissions:
   worldmanager.command:
     default: op
   worldmanager.subcommand.help:
+    description: Allows using the help subcommand
     default: true
   worldmanager.subcommand.region:
+    description: Allows using region management commands
     default: op
-  worldmanager.subcommand.pos1:
+  worldmanager.subcommand.delete:
+    description: Allows deleting worlds
     default: op
-  worldmanager.subcommand.pos2:
-    default: op
-  worldmanager.subcommand.define:
-    default: op
-  worldmanager.subcommand.flag:
-    default: op
-  worldmanager.subcommand.remove:
+  worldmanager.subcommand.duplicate:
+    description: Allows duplicating worlds
     default: op
   worldmanager.subcommand.list:
+    description: Allows listing worlds
+    default: true
+  worldmanager.subcommand.tp:
+    description: Allows teleporting to worlds
     default: op
-  worldmanager.region.bypass:
+  worldmanager.subcommand.create:
+    description: Allows creating worlds
     default: op
-    description: Bypass all region restrictions
+  worldmanager.subcommand.load:
+    description: Allows loading worlds
+    default: op
+  worldmanager.subcommand.unload:
+    description: Allows unloading worlds
+    default: op
+  worldmanager.subcommand.rename:
+    description: Allows renaming worlds
+    default: op
