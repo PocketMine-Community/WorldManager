@@ -64,7 +64,7 @@ class Registry {
             new CreateSubCommand(
                 "create",
                 "Create a new world",
-                "/worldmanager create <name>",
+                "/worldmanager create <name> <generator>",
                 ["new"],
                 "worldmanager.subcommand.create"
             ),

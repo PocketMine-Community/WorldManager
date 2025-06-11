@@ -17,15 +17,32 @@ class CreateSubCommand extends SubCommand {
         }
 
         $name = $args[0];
+        $generatorType = strtolower($args[1] ?? "normal");
+
         if(Server::getInstance()->getWorldManager()->loadWorld($name)) {
             $sender->sendMessage("§cWorld '$name' already exists!");
             return;
         }
 
-        Server::getInstance()->getWorldManager()->generateWorld($name, WorldCreationOptions::create()->setGeneratorClass(GeneratorManager::getInstance()->getGenerator("vanilla_normal")->getGeneratorClass()));
+        $generators = [
+            "normal" => "vanilla_normal",
+            "nether" => "vanilla_nether",
+            "end" => "ender",
+            "flat" => "flat",
+            "void" => "void"
+        ];
 
-        // TODO: Generator options
+        if(!isset($generators[$generatorType])) {
+            $sender->sendMessage("§cInvalid generator type! Available types: " . implode(", ", array_keys($generators)));
+            return;
+        }
 
-        $sender->sendMessage("§aWorld '$name' created successfully!");
+        $generatorClass = GeneratorManager::getInstance()->getGenerator($generators[$generatorType])->getGeneratorClass();
+        Server::getInstance()->getWorldManager()->generateWorld(
+            $name,
+            WorldCreationOptions::create()->setGeneratorClass($generatorClass)
+        );
+
+        $sender->sendMessage("§aWorld '$name' created successfully with $generatorType generator!");
     }
 }
