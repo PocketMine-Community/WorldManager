@@ -1,20 +1,20 @@
 <?php
 
-namespace PocketMineCommunity\utils;
+namespace PMCommunity\WorldManager\utils;
 
-use PocketMineCommunity\commands\subcommands\CreateSubCommand;
-use PocketMineCommunity\commands\subcommands\DeleteSubCommand;
-use PocketMineCommunity\commands\subcommands\DuplicateSubCommand;
-use PocketMineCommunity\commands\subcommands\HelpSubCommand;
-use PocketMineCommunity\commands\subcommands\ListSubCommand;
-use PocketMineCommunity\commands\subcommands\LoadSubCommand;
-use PocketMineCommunity\commands\subcommands\RegionSubCommand;
-use PocketMineCommunity\commands\subcommands\RenameSubCommand;
-use PocketMineCommunity\commands\subcommands\TeleportSubCommand;
-use PocketMineCommunity\commands\subcommands\UnloadSubCommand;
-use PocketMineCommunity\commands\WorldManagerCommand;
+use PMCommunity\WorldManager\commands\subcommands\CreateSubCommand;
+use PMCommunity\WorldManager\commands\subcommands\DeleteSubCommand;
+use PMCommunity\WorldManager\commands\subcommands\DuplicateSubCommand;
+use PMCommunity\WorldManager\commands\subcommands\HelpSubCommand;
+use PMCommunity\WorldManager\commands\subcommands\ListSubCommand;
+use PMCommunity\WorldManager\commands\subcommands\LoadSubCommand;
+use PMCommunity\WorldManager\commands\subcommands\RegionSubCommand;
+use PMCommunity\WorldManager\commands\subcommands\RenameSubCommand;
+use PMCommunity\WorldManager\commands\subcommands\TeleportSubCommand;
+use PMCommunity\WorldManager\commands\subcommands\UnloadSubCommand;
+use PMCommunity\WorldManager\commands\WorldManagerCommand;
+use PMCommunity\WorldManager\WorldManager;
 use pocketmine\Server;
-use PocketMineCommunity\WorldManager;
 
 class Registry {
 

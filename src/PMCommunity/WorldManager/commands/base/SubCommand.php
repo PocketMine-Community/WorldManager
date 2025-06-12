@@ -1,6 +1,6 @@
 <?php
 
-namespace PocketMineCommunity\commands\base;
+namespace PMCommunity\WorldManager\commands\base;
 
 use pocketmine\command\CommandSender;
 use pocketmine\plugin\Plugin;

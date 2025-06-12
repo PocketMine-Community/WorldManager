@@ -1,14 +1,14 @@
 <?php
 
-namespace PocketMineCommunity\listener;
+namespace PMCommunity\WorldManager\listener;
 
-use PocketMineCommunity\WorldManager;
-use pocketmine\event\Listener;
+use PMCommunity\WorldManager\WorldManager;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
-use pocketmine\event\player\PlayerMoveEvent;
+use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
+use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\item\SpawnEgg;
 use pocketmine\math\Vector3;
 use pocketmine\player\Player;

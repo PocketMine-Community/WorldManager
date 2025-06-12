@@ -1,10 +1,10 @@
 <?php
 
-namespace PocketMineCommunity;
+namespace PMCommunity\WorldManager;
 
-use PocketMineCommunity\listener\RegionListener;
-use PocketMineCommunity\region\RegionManager;
-use PocketMineCommunity\utils\Registry;
+use PMCommunity\WorldManager\listener\RegionListener;
+use PMCommunity\WorldManager\region\RegionManager;
+use PMCommunity\WorldManager\utils\Registry;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Filesystem;

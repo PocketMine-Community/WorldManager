@@ -1,11 +1,11 @@
 <?php
-namespace PocketMineCommunity\commands\subcommands;
+namespace PMCommunity\WorldManager\commands\subcommands;
 
-use PocketMineCommunity\commands\base\SubCommand;
-use PocketMineCommunity\WorldManager;
+use PMCommunity\WorldManager\commands\base\SubCommand;
+use PMCommunity\WorldManager\WorldManager;
 use pocketmine\command\CommandSender;
-use pocketmine\utils\TextFormat;
 use pocketmine\Server;
+use pocketmine\utils\TextFormat;
 
 class ListSubCommand extends SubCommand {
     public function execute(CommandSender $sender, array $args): void {

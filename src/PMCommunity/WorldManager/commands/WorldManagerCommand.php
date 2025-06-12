@@ -1,9 +1,9 @@
 <?php
 
-namespace PocketMineCommunity\commands;
+namespace PMCommunity\WorldManager\commands;
 
-use PocketMineCommunity\commands\base\BaseCommand;
-use PocketMineCommunity\WorldManager;
+use PMCommunity\WorldManager\commands\base\BaseCommand;
+use PMCommunity\WorldManager\WorldManager;
 use pocketmine\command\CommandSender;
 
 class WorldManagerCommand extends BaseCommand {

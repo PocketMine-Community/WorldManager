@@ -1,10 +1,10 @@
 <?php
 
-namespace PocketMineCommunity\commands\subcommands;
+namespace PMCommunity\WorldManager\commands\subcommands;
 
-use PocketMineCommunity\commands\base\SubCommand;
-use PocketMineCommunity\region\Region;
-use PocketMineCommunity\WorldManager;
+use PMCommunity\WorldManager\commands\base\SubCommand;
+use PMCommunity\WorldManager\region\Region;
+use PMCommunity\WorldManager\WorldManager;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;

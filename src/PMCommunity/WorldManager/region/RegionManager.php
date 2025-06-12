@@ -1,10 +1,10 @@
 <?php
 
-namespace PocketMineCommunity\region;
+namespace PMCommunity\WorldManager\region;
 
-use PocketMineCommunity\WorldManager;
-use pocketmine\world\Position;
+use PMCommunity\WorldManager\WorldManager;
 use pocketmine\utils\Config;
+use pocketmine\world\Position;
 
 class RegionManager {
 
