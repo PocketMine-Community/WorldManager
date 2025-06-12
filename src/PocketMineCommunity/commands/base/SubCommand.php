@@ -1,10 +1,14 @@
 <?php
 
-namespace PMCommunity\commands\base;
+namespace PocketMineCommunity\commands\base;
 
 use pocketmine\command\CommandSender;
+use pocketmine\plugin\Plugin;
+use pocketmine\plugin\PluginOwned;
+use pocketmine\plugin\PluginOwnedTrait;
 
-abstract class SubCommand {
+abstract class SubCommand implements PluginOwned {
+    use PluginOwnedTrait;
 
     /** @var string */
     private $name;
@@ -17,7 +21,7 @@ abstract class SubCommand {
     /** @var string */
     private $permission;
 
-    public function __construct(string $name, string $description = "", string $usage = "", array $aliases = [], string $permission = "") {
+    public function __construct(protected Plugin $plugin, string $name, string $description = "", string $usage = "", array $aliases = [], string $permission = "") {
         $this->name = $name;
         $this->description = $description;
         $this->usage = $usage;

@@ -1,6 +1,6 @@
 <?php
 
-namespace PMCommunity\region;
+namespace PocketMineCommunity\region;
 
 use pocketmine\world\Position;
 

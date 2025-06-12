@@ -1,8 +1,8 @@
 <?php
 
-namespace PMCommunity\listener;
+namespace PocketMineCommunity\listener;
 
-use PMCommunity\WorldManager;
+use PocketMineCommunity\WorldManager;
 use pocketmine\event\Listener;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;

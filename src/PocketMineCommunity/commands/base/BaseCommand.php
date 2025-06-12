@@ -1,17 +1,21 @@
 <?php
 
-namespace PMCommunity\commands\base;
+namespace PocketMineCommunity\commands\base;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\permission\DefaultPermissionNames;
+use pocketmine\plugin\Plugin;
+use pocketmine\plugin\PluginOwned;
+use pocketmine\plugin\PluginOwnedTrait;
 
-abstract class BaseCommand extends Command {
+abstract class BaseCommand extends Command implements PluginOwned {
+    use PluginOwnedTrait;
 
     /** @var SubCommand[] */
     private $subCommands = [];
 
-    public function __construct(string $name, string $description = "", string $usageMessage = null, array $aliases = []) {
+    public function __construct(protected Plugin $plugin, string $name, string $description = "", string $usageMessage = null, array $aliases = []) {
         parent::__construct($name, $description, $usageMessage, $aliases);
         $this->setPermission("worldmanager.command");
         $this->setPermissionMessage("You don't have permission to use this command!");

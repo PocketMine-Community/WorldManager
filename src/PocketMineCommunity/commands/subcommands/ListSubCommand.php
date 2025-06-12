@@ -1,8 +1,8 @@
 <?php
-namespace PMCommunity\commands\subcommands;
+namespace PocketMineCommunity\commands\subcommands;
 
-use PMCommunity\commands\base\SubCommand;
-use PMCommunity\WorldManager;
+use PocketMineCommunity\commands\base\SubCommand;
+use PocketMineCommunity\WorldManager;
 use pocketmine\command\CommandSender;
 use pocketmine\utils\TextFormat;
 use pocketmine\Server;

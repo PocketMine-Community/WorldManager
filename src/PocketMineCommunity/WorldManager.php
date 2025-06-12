@@ -1,10 +1,10 @@
 <?php
 
-namespace PMCommunity;
+namespace PocketMineCommunity;
 
-use PMCommunity\listener\RegionListener;
-use PMCommunity\region\RegionManager;
-use PMCommunity\utils\Registry;
+use PocketMineCommunity\listener\RegionListener;
+use PocketMineCommunity\region\RegionManager;
+use PocketMineCommunity\utils\Registry;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Filesystem;
@@ -31,7 +31,6 @@ class WorldManager extends PluginBase {
 
         Registry::initCommands();
         
-        $this->getLogger()->debug("WorldManager enabled!");
     }
 
     public function onDisable(): void {

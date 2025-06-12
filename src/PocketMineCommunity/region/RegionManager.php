@@ -1,8 +1,8 @@
 <?php
 
-namespace PMCommunity\region;
+namespace PocketMineCommunity\region;
 
-use PMCommunity\WorldManager;
+use PocketMineCommunity\WorldManager;
 use pocketmine\world\Position;
 use pocketmine\utils\Config;
 
@@ -33,7 +33,6 @@ class RegionManager {
             $this->regions[$regionData['name']] = Region::fromArray($regionData);
         }
         
-        $this->plugin->getLogger()->info("Loaded " . count($this->regions) . " regions");
     }
 
     /**

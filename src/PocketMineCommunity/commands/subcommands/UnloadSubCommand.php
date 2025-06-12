@@ -1,7 +1,7 @@
 <?php
-namespace PMCommunity\commands\subcommands;
+namespace PocketMineCommunity\commands\subcommands;
 
-use PMCommunity\commands\base\SubCommand;
+use PocketMineCommunity\commands\base\SubCommand;
 use pocketmine\command\CommandSender;
 use pocketmine\Server;
 
