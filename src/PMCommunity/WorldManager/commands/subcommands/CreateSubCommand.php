@@ -25,11 +25,10 @@ class CreateSubCommand extends SubCommand {
         }
 
         $generators = [
-            "normal" => "vanilla_normal",
-            "nether" => "vanilla_nether",
-            "end" => "ender",
-            "flat" => "flat",
-            "void" => "void"
+            "normal", "classic" => "vanilla_normal",
+            "nether" => "nether",
+            "flat", "superflat" => "flat",
+            "void", "empty", "air" => "void"
         ];
 
         if(!isset($generators[$generatorType])) {
@@ -37,7 +36,16 @@ class CreateSubCommand extends SubCommand {
             return;
         }
 
-        $generatorClass = GeneratorManager::getInstance()->getGenerator($generators[$generatorType])->getGeneratorClass();
+        $type = $generators[$generatorType];
+
+        $generator = GeneratorManager::getInstance()->getGenerator($type);
+
+        if (is_null($generator)){
+            $sender->sendMessage("§cUnexpected error occured. Please report issue on github page.");
+            return;
+        }
+
+        $generatorClass = $generator->getGeneratorClass();
         Server::getInstance()->getWorldManager()->generateWorld(
             $name,
             WorldCreationOptions::create()->setGeneratorClass($generatorClass)

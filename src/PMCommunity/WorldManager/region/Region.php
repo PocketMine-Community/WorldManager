@@ -39,8 +39,7 @@ class Region {
         $this->pos1 = $pos1;
         $this->pos2 = $pos2;
         $this->priority = $priority;
-        
-        // Set default flags if not provided
+
         $this->flags = array_merge([
             'build' => 'allow',
             'pvp' => 'allow',

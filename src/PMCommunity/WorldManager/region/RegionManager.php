@@ -55,7 +55,7 @@ class RegionManager {
      */
     public function addRegion(Region $region): bool {
         if (isset($this->regions[$region->getName()])) {
-            return false; // Region already exists
+            return false;
         }
         
         $this->regions[$region->getName()] = $region;
@@ -70,7 +70,7 @@ class RegionManager {
      */
     public function removeRegion(string $name): bool {
         if (!isset($this->regions[$name])) {
-            return false; // Region doesn't exist
+            return false;
         }
         
         unset($this->regions[$name]);
@@ -84,7 +84,7 @@ class RegionManager {
      * @return Region|null
      */
     public function getRegion(string $name): ?Region {
-        return $this->regions[$name] ?? null;
+        return $this->regions[$name];
     }
 
     /**
@@ -107,8 +107,7 @@ class RegionManager {
                 $regions[] = $region;
             }
         }
-        
-        // Sort by priority (highest first)
+
         usort($regions, function(Region $a, Region $b) {
             return $b->getPriority() - $a->getPriority();
         });
@@ -136,7 +135,7 @@ class RegionManager {
         $region = $this->getHighestPriorityRegion($position);
         
         if ($region === null) {
-            return true; // No region = allow by default
+            return true;
         }
         
         return $region->isFlagAllowed($flag);

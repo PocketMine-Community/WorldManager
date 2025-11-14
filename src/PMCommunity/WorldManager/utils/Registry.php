@@ -13,8 +13,10 @@ use PMCommunity\WorldManager\commands\subcommands\RenameSubCommand;
 use PMCommunity\WorldManager\commands\subcommands\TeleportSubCommand;
 use PMCommunity\WorldManager\commands\subcommands\UnloadSubCommand;
 use PMCommunity\WorldManager\commands\WorldManagerCommand;
+use PMCommunity\WorldManager\generator\VoidGenerator;
 use PMCommunity\WorldManager\WorldManager;
 use pocketmine\Server;
+use pocketmine\world\generator\GeneratorManager;
 
 class Registry {
 
@@ -104,5 +106,16 @@ class Registry {
         }
 
         Server::getInstance()->getCommandMap()->register("worldmanager", $command);
+    }
+
+    static function initGenerators() : void
+    {
+        $gens = [
+            "void" => VoidGenerator::class // TODO: Ender generator
+        ];
+
+        foreach ($gens as $gen => $class) {
+            GeneratorManager::getInstance()->addGenerator($class, $gen, fn() => null, true);
+        }
     }
 }

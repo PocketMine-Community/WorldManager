@@ -3,6 +3,7 @@ main: PMCommunity\WorldManager\WorldManager
 version: 1.0.0
 api: 5.0.0
 author: PocketMine Community
+load: STARTUP
 
 permissions:
   worldmanager.command:
