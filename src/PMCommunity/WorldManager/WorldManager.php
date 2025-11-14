@@ -30,7 +30,7 @@ class WorldManager extends PluginBase {
         $this->getServer()->getPluginManager()->registerEvents(new RegionListener($this), $this);
 
         Registry::initCommands();
-        
+        Registry::initGenerators();
     }
 
     public function onDisable(): void {
